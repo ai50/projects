@@ -3,4 +3,3 @@ submit50:
     - !exclude "*"
     - !include "*.py"
     - !include "*.md"
-    - !require traffic.py
