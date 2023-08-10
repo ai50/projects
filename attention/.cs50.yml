@@ -1,0 +1,6 @@
+submit50:
+  files: &submit50_files
+    - !exclude "*"
+    - !include "*.py"
+    - !include "*.md"
+    - !require mask.py
