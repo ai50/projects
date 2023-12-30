@@ -1,6 +1,9 @@
-submit50:
-  files: &submit50_files
+check50:
+  files: &check50_files
     - !exclude "*"
     - !include "*.py"
     - !include "*.md"
     - !require mask.py
+
+submit50:
+  files: *check50_files

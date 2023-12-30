@@ -1,5 +1,8 @@
-submit50:
-  files: &submit50_files
+check50:
+  files: &check50_files
     - !exclude "*"
     - !include "*.py"
     - !require parser.py
+
+submit50:
+  files: *check50_files
