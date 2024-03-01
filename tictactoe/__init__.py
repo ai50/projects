@@ -8,15 +8,16 @@ X = "X"
 O = "O"
 EMPTY = None
 
+
 @check50.check()
 def exists():
-    """degrees.py exists"""
+    """tictactoe.py exists"""
     check50.exists("tictactoe.py")
 
 
 @check50.check(exists)
 def imports():
-    """degrees.py imports"""
+    """tictactoe.py imports"""
     sys.path = [""] + sys.path
     check50.py.import_("tictactoe.py")
 
@@ -159,7 +160,7 @@ def test_result_exception0():
     tictactoe = check50.py.import_("tictactoe.py")
     board = [[EMPTY, EMPTY, X], [EMPTY, EMPTY, O], [X, EMPTY, EMPTY]]
     try:
-        result = tictactoe.result(board, (2, 0))
+        tictactoe.result(board, (2, 0))
     except Exception:
         return
     raise check50.Failure("expected exception, none caught")
@@ -172,20 +173,20 @@ def test_result_exception1():
     tictactoe = check50.py.import_("tictactoe.py")
     board = [[EMPTY, EMPTY, X], [EMPTY, EMPTY, O], [X, EMPTY, EMPTY]]
     try:
-        result = tictactoe.result(board, (3, 1))
+        tictactoe.result(board, (3, 1))
     except Exception:
         return
     raise check50.Failure("expected exception, none caught")
 
 
 @check50.check(imports)
-def test_result_exception1():
+def test_result_exception2():
     """result raises exception on negative out-of-bounds move"""
     sys.path = [""] + sys.path
     tictactoe = check50.py.import_("tictactoe.py")
     board = [[EMPTY, EMPTY, X], [EMPTY, EMPTY, O], [X, EMPTY, EMPTY]]
     try:
-        result = tictactoe.result(board, (-1, 2))
+        tictactoe.result(board, (-1, 2))
     except Exception:
         return
     raise check50.Failure("expected exception, none caught")
@@ -198,7 +199,7 @@ def test_result_unchanged():
     tictactoe = check50.py.import_("tictactoe.py")
     board = [[EMPTY, EMPTY, X], [EMPTY, EMPTY, O], [X, EMPTY, EMPTY]]
     saved = board.copy()
-    result = tictactoe.result(board, (0, 0))
+    tictactoe.result(board, (0, 0))
     if board != saved:
         raise check50.Failure("original board modified")
 
@@ -225,6 +226,7 @@ def test_winner1():
     result = tictactoe.winner(board)
     if expected != result:
         raise check50.Mismatch(str(expected), str(result))
+
 
 @check50.check(imports)
 def test_winner2():
@@ -383,7 +385,7 @@ def test_minimax_none0():
 
 
 @check50.check(imports)
-def test_minimax_none0():
+def test_minimax_none1():
     """minimax returns None after X wins"""
     sys.path = [""] + sys.path
     tictactoe = check50.py.import_("tictactoe.py")
