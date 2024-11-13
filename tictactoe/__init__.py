@@ -371,6 +371,18 @@ def test_minimax2():
 
 
 @check50.check(imports)
+def test_minimax_prune0():
+    """minimax finds immediate winning move"""
+    sys.path = [""] + sys.path
+    tictactoe = check50.py.import_("tictactoe.py")
+    board = [[O, X, X], [O, EMPTY, X], [EMPTY, O, EMPTY]]
+    expected = (2, 2)
+    result = tictactoe.minimax(board)
+    if expected != result:
+        raise check50.Mismatch(str(expected), str(result))
+
+
+@check50.check(imports)
 def test_minimax_none0():
     """minimax returns None in tied game"""
     sys.path = [""] + sys.path
