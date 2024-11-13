@@ -179,7 +179,7 @@ def test_result_exception1():
 
 
 @check50.check(imports)
-def test_result_exception1():
+def test_result_exception2():
     """result raises exception on negative out-of-bounds move"""
     sys.path = [""] + sys.path
     tictactoe = check50.py.import_("tictactoe.py")
@@ -383,7 +383,7 @@ def test_minimax_none0():
 
 
 @check50.check(imports)
-def test_minimax_none0():
+def test_minimax_none1():
     """minimax returns None after X wins"""
     sys.path = [""] + sys.path
     tictactoe = check50.py.import_("tictactoe.py")
