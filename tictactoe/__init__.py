@@ -351,7 +351,7 @@ def test_minimax1():
     """minimax finds only winning move"""
     sys.path = [""] + sys.path
     tictactoe = check50.py.import_("tictactoe.py")
-    board = [[EMPTY, EMPTY, EMPTY], [X, O, O], [EMPTY, X, EMPTY]]
+    board = [[X, EMPTY, EMPTY], [X, O, O], [EMPTY, EMPTY, EMPTY]]
     expected = (2, 0)
     result = tictactoe.minimax(board)
     if expected != result:
