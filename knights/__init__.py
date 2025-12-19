@@ -30,7 +30,7 @@ def test_puzzle0():
             raise check50.Failure(f"failed to infer {true}")
     for false in falses:
         if puzzle.model_check(knowledge, false):
-            raise check50.Failure("incorrectly inferred {false}")
+            raise check50.Failure(f"incorrectly inferred {false}")
 
 
 @check50.check(imports)
@@ -46,7 +46,7 @@ def test_puzzle1():
             raise check50.Failure(f"failed to infer {true}")
     for false in falses:
         if puzzle.model_check(knowledge, false):
-            raise check50.Failure("incorrectly inferred {false}")
+            raise check50.Failure(f"incorrectly inferred {false}")
 
 
 @check50.check(imports)
@@ -62,7 +62,7 @@ def test_puzzle2():
             raise check50.Failure(f"failed to infer {true}")
     for false in falses:
         if puzzle.model_check(knowledge, false):
-            raise check50.Failure("incorrectly inferred {false}")
+            raise check50.Failure(f"incorrectly inferred {false}")
 
 
 @check50.check(imports)
@@ -78,7 +78,7 @@ def test_puzzle3():
             raise check50.Failure(f"failed to infer {true}")
     for false in falses:
         if puzzle.model_check(knowledge, false):
-            raise check50.Failure("incorrectly inferred {false}")
+            raise check50.Failure(f"incorrectly inferred {false}")
 
 
 @check50.check(imports)
